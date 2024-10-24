@@ -1,0 +1,233 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    p {
+      font-size: 19px; /* Adjust the size to your preference */
+    }
+	h3 {
+      font-size: 32px; /* Adjust the size to your preference */
+    }
+	h2 {
+      font-size: 36px; /* Adjust the size to your preference */
+    }
+	
+  </style>
+</head>
+<body>
+
+<p><h2 style="text-align:center"> Characteristics of a Power Diode </h2>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+<h3> Introduction </h3>
+<p>
+		This laboratory session was focused on getting the characteristics of a power diode, which consists of many diodes in parallel so that it can bear higher values of voltage and current across its terminals.
+
+</p>
+
+    <p style="text-align:center">
+        <table align='center'>
+            <tr>
+                <td align=center><img src="powerdiode.jpeg" height="450"></td>
+            </tr>
+		<tr><td align=center>
+            Powerdiode with contacts (only cables visible) under the microscope.
+            </td></tr>
+        </table>
+    </p>
+
+<p>
+		First the powerdiode was connected to a sourcemeter, so that the IV curves could be studied, and to get the series resistance.
+		<br><br>
+		Then an AC signal together with a DC offset was applied to the powerdiode, to measure its impedance in reverse bias. From this, its capacity and acceptor doping concentration were calculated, and finally from the doping concentration also the series resistance.
+		<br><br>
+		More information about the IV characteristics of a diode can be found in <a href="https://lampz.tugraz.at/~hadley/psd/L6/pnIV.php">PN diode IV characteristics</a>.
+</p>
+    
+<h3>Experimental setup</h3>
+<p>
+The following instruments were used:<br><br>
+<a href="https://www.testequipmenthq.com/datasheets/HAMEG-HMO3524-Datasheet.pdf">HAMEG HMO3524 Digital Oscilloscope</a><br>
+<a href="https://www.thinksrs.com/products/sr570.html">SRS SR570 Current Preamplifier</a><br>
+<a href="http://lampz.tugraz.at/~hadley/semi/ch9/instruments/Stanford830/SR830.php">SRS SR830 Lock-in Amplifier</a><br>
+<a href="http://lampx.tugraz.at/~hadley/num/ch9/instruments/Keithley3390/keithley3390.php">KEITHLEY 3390 Arbitrary Waveform Generator</a><br>
+<a href="http://lampz.tugraz.at/~hadley/semi/ch9/instruments/Keithley26xx/Keithley26xx.php">Keithley 2600 Series Sourcemeter</a><br>
+Bresser MikroCam SP 5.0<br><br>
+
+For the IV-curve, the sourcemeter was connected directly to the powerdiode.<br>
+To measure the impedance of the diode in reverse bias, the waveform generator was used to generate the AC signal with varying frequencies, together with the DC offset. Its sync output was connected to the lock-in amplifier, that was used to measure the phaseshift between current and voltage. The signal output of the waveform generator was connected via the oscilloscope to the powerdiode. The other contact of the powerdiode was connected to the input of the current preamplifier. From there, the signal was connected via the oscilloscope to the lock-in amplifier.
+
+</p>
+<h3> Series resistance </h3>
+<table align=center>
+<tr><td align=center><img src="Powerdiode2023_12_05_114827.png" height="410"></td></tr>
+<tr><td align=center>IV-curve of the powerdiode in forward- and reverse bias. The decreasing slope beyond +0.5V is due to the series resistance.</td></tr>
+</table>
+<p>The series resistance can also be calculated using the <a href="https://lampx.tugraz.at/~hadley/psd/L6/diode_fit2.html">Least squares fit of the diode equation</a>. The equation of a real diode describes its I-V curve, and is expressed as follows:
+
+\[ \begin{equation}
+I = I_S (exp(\frac{e (V-IR_S)}{\eta k_BT-1})) [A]
+\end{equation} \]
+
+<p> Here, $I_S$ is the saturation current, $e$ is the charge of an electron, $k_B$ is Boltzmann's constant, $R_S$ is the series resistance, $\eta$ is the nonideality factor and T is the temperature.
+
+<p> The nonideality factor is added to the formula to take into account the recombination and generation of electron-hole pairs. In forward bias, there is less current than expected due to the recombination, and in reverse bias there is more than expected. In low bias, $\eta=2$, as the recombination dominates, and in high bias $\eta=1$, following the ideal behaviour.
+
+<p> The series resistance appears in real diodes because outside the p-n junction there are semiconducting regions that have not been depleted yet, which form a resistor in series. It becomes noticeable at high voltages.
+
+<p> Using the fit, the value we get for the series resistance is:
+
+<p>
+\[ \begin{equation}
+R_S = 5.92 \, \Omega
+\end{equation} \]
+
+</p>
+    <p style="text-align:center">
+        <table align='center'>
+            <tr>
+                <td><img src="powerdiode_seriesresistance.png" height="410"></td>
+            </tr>
+        </table>
+    </p>
+
+<p>
+<p>
+
+We can see in the second graph that the data does not match perfectly the fit calculated for small values of the voltage, which comes from a mistake in the programming of the website used. However, that does not interfere in the calculation of the series resistance, it only affects the nonideality factor.
+
+
+<h3> Acceptor doping concentration </h3>
+<p>From the capacity of a diode in reverse bias, its doping concentration and also its resistance can be calculated.
+To measure the capacity, we applied a sinusoidal AC signal to the powerdiode, together with a DC offset to reverse bias it. The amplitude of the AC signal was 1 V, and the frequency was changed from 100Hz to 2900Hz in 100Hz steps. Then the impedance Z was measured, which is connected to the capacity via the simple relation
+\[ \begin{equation}
+C = \frac{1}{\omega Z}.
+\end{equation} \]
+Additionally the I-U-phaseshift was measured, which for a capacity should be 90°, to have some quality control of the setup.
+    <p style="text-align:center">
+        <table align='center'>
+            <tr>
+                <td align=center><img src="capacitor2023_12_05_154235-1.5 offset.png" height="410"></td>
+            </tr>
+            <tr><td><center><font size="4">Impedance and phaseshift of the powerdiode with -1.5V offset at different frequencies</font></center></td></tr>
+        </table>
+    </p>
+
+<p>This was repeated for different DC offsets: -1V, -1.5V, -2V, -2.5V, -3V, -3.5V, -4V and -4.5V. A smaller offset than -1V is not possible, because the amplitude of the AC signal is 1V and a smaller offset would forward-bias the powerdiode around the maximum of the AC signal.
+For -4.5V offset, the measured capacities are</p>
+    <p style="text-align:center">
+        <table align='center'>
+            <tr>
+                <td align=center><img src="powerdiode_capacity_C.png" height="410"></td>
+            </tr>
+            <tr><td><center><font size="4">Capacity of powerdiode with -4.5V offset at different frequencies</font></center></td></tr>
+        </table>
+    </p>
+<p>The average capacities at different offsets are</p>
+<div style="text-align:center">
+<font size="4">C / nF&emsp;&emsp;Offset / V </font><br />
+<textarea name="text" rows="8" cols="20" wrap="off" style="border: solid 1px black">
+3.133441   -1.0
+2.826439   -1.5
+2.624207   -2.0
+2.479071   -2.5
+2.366667   -3.0
+2.278008   -3.5
+2.201482   -4.0
+2.137070   -4.5
+</textarea><div style="text-align:left">
+<!--<table align='center'>
+<tr><td>Average capacity / nF</td><td>Offset / V</td></tr>
+<tr><td>3.1334412848765724</td><td>-1.0</td></tr>
+<tr><td>2.826439023381466</td><td>-1.5</td></tr>
+<tr><td>2.624206978626958</td><td>-2.0</td></tr>
+<tr><td>2.4790712160687963</td><td>-2.5</td></tr>
+<tr><td>2.3666670949247895</td><td>-3.0</td></tr>
+<tr><td>2.2780080885839516</td><td>-3.5</td></tr>
+<tr><td>2.2014817436627814</td><td>-4.0</td></tr>
+<tr><td>2.1370703746966188</td><td>-4.5</td></tr>
+</table>-->
+<p>As a check, the capacity of the powerdiode in reverse bias was also estimated to be around
+\[ \begin{equation}
+C = \varepsilon \times 81mm^2 / 10 \mu m = 0.86 nF
+\end{equation} \]
+
+which is on the same order of magnitude as the measured values.
+<br>
+For a two-sided abrupt p-n-junction, the width of the depletion region is
+
+\[ \begin{equation}
+W = \sqrt{\frac{2 \varepsilon (N_D + N_A) (V_{bi}-V)}{e N_D N_A}},
+\end{equation} \]
+
+and with $N_D >> N_A$ (one-sided junction), this reduces to
+
+\[ \begin{equation}
+W = \sqrt{\frac{ 2 \varepsilon (V_{bi}-V)}{e N_A} }.
+\end{equation} \]
+
+Since the width of the depletion region of a diode determines its specific capacity (=capacity per unit area),
+\[ \begin{equation}
+W=\frac{\varepsilon}{c_j}
+\end{equation} \]
+
+one can obtain $V_{bi}$ and $N_A$ by measuring the capacity at different reverse-bias-offsets.
+From equations (4) and (5) we get
+\[ \begin{equation}
+\frac{1}{c_j^2} = \frac{2 (V_{bi}-V)}{e \varepsilon N_A},
+\end{equation} \]
+which is a linear equation in $V$. So one must plot $\frac{1}{c_j^2}$ at different offsets, then the slope of the resulting line
+equals $\frac{2}{e \varepsilon N_A}$, and the line intersects the x-axis at $V_{bi}$.
+    <p style="text-align:center">
+        <table align='center'>
+            <tr>
+                <td align=center><img src="powerdiode_capacity_resistance.png" height="450"></td>
+            </tr>
+            <tr><td><center><font size="4">Measured capacities with linear fit to get $N_A$ and $V_{bi}$</font></center></td></tr>
+        </table>
+    </p>
+
+<p>From this, the built-in voltage is $V_{bi} = 2.3V$, which is much too high for a silicon diode, it should be around $0.6V$. The slope of the fit line leads to
+\[ \begin{equation}
+N_A = 5.4 \times 10^{20} m^{-3}.
+\end{equation} \]
+
+<h3> Estimated conductivity </h3>
+<p>Since $N_D >> N_A$, the p-doped-side will be much thicker than the n-side. For the series resistance in forward bias, we can then assume that the powerdiode only consists of the p-side.
+The hole concentration in the p-side is simply
+\[ \begin{equation}
+p_p = N_A,
+\end{equation} \]
+and the electron contribution to the conductivity in the p-side can be neglected. The carrier mobility in silicon can be calculated <a href="http://lampz.tugraz.at/~hadley/psd/L4/mobility.php">here</a>, for $T=300K$ and $N_A=5.4 \times 10^{14} cm^{-3}$ it is $\mu_h = 283.9 \, cm^2/Vs$.
+<br>The conductivity of the p-side is then
+
+\[ \begin{equation}
+\sigma_p = p_p \, e \, \mu_h = 0.02476 \, \Omega^{-1} cm^{-1}.
+\end{equation} \]
+
+With the thickness of the diode $d = 120\mu m$ and its area $A = 81 mm^2$, the total resistance is
+\[ \begin{equation*}
+R = \frac{d}{\sigma A} = 0.598 \, \Omega.
+\end{equation*} \]
+
+This is almost exactly 1/10 of the result with the other method, so we checked everything twice if there is some simple mistake, but found none.
+
+</body>
+</html>

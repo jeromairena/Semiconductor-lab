@@ -1,0 +1,431 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    p {
+      font-size: 19px; /* Adjust the size to your preference */
+    }
+	h3 {
+      font-size: 32px; /* Adjust the size to your preference */
+    }
+	h2 {
+      font-size: 36px; /* Adjust the size to your preference */
+    }
+	
+  </style>
+</head>
+<body>
+
+<p><h2 style="text-align:center"> Characteristics of a wire </h2>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+<h3> Introduction </h3>
+<p>
+    The aim of the laboratory session is to get the dependance between the resistance of a wire and its temperature, and analyze the results obtained. 
+
+<p>
+
+		In order to do that, several wires with different characteristics (material and diameter) were connected to a sourcemeter, and their IV curves were studied. The one with the most non-linear behaviour was chosen, which was an aluminum wire with the following specifications:
+
+</p>
+
+    <p style="text-align:center">
+        <table align='center' width=500>
+            <tr>
+                <td><img src="Aluminumwire.jpg" height="170"></td>
+                <td>
+                Diameter: 0.025 mm <br>
+                Purity: 99.9% Aluminum
+
+                </td>
+            </tr>
+        </table>
+    </p>
+
+<p>
+		The wire was then put inside a climate chamber, to get the value of the resistance at different temperatures, R(T). From this relation, T(V) and P(V) were subsequently calculated. As a final step, the voltage applied to the wire was increased until it broke.
+
+<p>
+
+For these experiments, a <a href="http://lampz.tugraz.at/~hadley/semi/ch9/instruments/Keithley26xx/Keithley26xx.php">Keithley 2636A Series Sourcemeter</a> was used as a voltage supply,
+    and also as a current measurement tool. To measure the wire under different temperatures a <a href="http://lampz.tugraz.at/~hadley/semi/ch9/instruments/VT4002/index.php">Vötsch VT4002 climate chamber</a>
+    was used.
+		Also, the <a href="https://lampz.tugraz.at/~hadley/semi/ch9/measurements/4pt/4pt.php">Four wire resistance measurement</a> method was used to get a more accurate value of the resistance.
+</p>
+    <p style="text-align:center">
+        <table align='center'>
+            <tr>
+                <td align=center><img src="wire_measurement.png" height="250"></td>
+            </tr>
+            <tr><td align=center>Four wire measurement of the wire. The apparatus is made of copper to reduce its resistance.</td></tr>
+        </table>
+    </p>
+    
+<h3> Temperature dependence of resistance </h3>
+
+<p>
+	The plot below shows the temperature dependence of the resistance of the aluminium wire. A linear fit has been created to calculate linear dependence 
+\[ \begin{equation}
+R(T) = R_0 + R_1T
+\end{equation} \]
+</p>
+
+    <p style="text-align:center">
+        <table align='center'>
+            <tr>
+                <td align=center><img src="Figure_4.png" height="440"></td>
+            </tr>
+		<tr><td align=center>
+            Figure 1: Temperature dependence of the resistance of the aluminium wire. Experimental values, theoretical values and linear fit calculated.
+            </td></tr>
+        </table>
+    </p>
+
+<p>
+The values for $R_0$ and $R_1$ are:
+\[ \begin{equation}
+R_0 = 1.634002 \, \Omega \quad
+R_1 = 0.019161 \, \Omega/\mathrm{K}
+\end{equation} \]
+
+<p>
+
+According to the following website, the <a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-12/temperature-coefficient-resistance/">Temperature Coefficient of Resistance</a> for Aluminum is 
+\[ \begin{equation}
+\alpha = 0.004308 \, \mathrm{K^{-1}}
+\end{equation} \]
+
+which has the same order of magnitude as the coefficient calculated from the linear fit:
+\[ \begin{equation}
+\alpha = 0.009499 \, \mathrm{K^{-1}}
+\end{equation} \]
+There is a factor 2 in between the experimental and the literature value though, which is also clearly visible in the plot.
+</p>
+
+<h3> Estimation of T(V) and P(V) </h3>
+
+<p>
+
+	From the R(T) relation, the temperature for a certain applied voltage, T(V), can be calculated using Ohms law. The plot below shows the result. The behaviour close to zero current is very unstable, which is expected as small changes cause a big change in Ohms law.
+
+\[ \begin{equation}
+R = \frac{U}{I}
+\end{equation} \]
+
+</p>
+    <p style="text-align:center">
+        <table align='center'>
+            <tr>
+                <td><img src="Figure_5.png" height="450"></td>
+            </tr>
+		<tr><td align=center colspan=2>
+            Figure 2: Almost linear part of the IV curve and temperature dependance with voltage.
+            </td></tr>
+        </table>
+    </p>
+ 
+<p>
+	Figure 2 shows the results for the nearly linear part of the IV curve. As the applied voltage increases, the behaviour changes. The results are shown in figure 3, as can be seen, the results are not as stable.
+</p>
+
+    <p style="text-align:center">
+        <table align='center'>
+            <tr>
+                <td><img src="Figure_6.png" height="450"></td>
+            </tr>
+		<tr><td align=center colspan=2>
+            Figure 3: IV curve for high voltages and temperature dependance with voltage.
+            </td></tr>
+        </table>
+    </p>
+
+<p>
+    The I-V-curve in fig.3 starts out smooth, and as the resistance increases due to higher temperature, the slope decreases. Then above 1.5V some cracks appear, and at 2.5V there is a characteristic drop in the current. This drop is reproducable, although it does not occur each time exactly at the same voltage (see fig.6, there it occurs at 2.4V). Since there is no phase change in aluminum before its melting point, we have no explanation for this behaviour.
+    <br><br>
+	Lastly, the dissipated power can be calculated, which is shown in figures 4 and 5. The power increases more steeply than the temperature, as can be expected from Stefan-Boltzmann-law, where the radiated power is proportional to $T^4$.
+
+    Fig. 5 shows a comparison of the experimental P(V) and the calculated dissipated power due to radiation and convection, assuming that the whole wire is at the temperature that corresponds to its resistance via the obtained R(T) relation (see simulation section for the used formulas).
+    <br>
+    The calculated power is about a factor 50 too low. This could be due to the real wire having a larger surface area than the assumed perfect cylinder, or it is not a valid approximation that the whole wire is at a uniform temperature, or the R(T) relation is wrong.
+
+</p>
+
+    <p style="text-align:center">
+        <table align='center'>
+            <tr>
+                <td><img src="Figure_7.png" height="430"></td>
+                <td><img src="Figure_8.png" height="430"></td>
+            </tr>
+		<tr><td align=center>
+            Figure 4: Dissipated power and temperature dependance with voltage.
+        </td><td align=center>
+            Figure 5: Electrical power and radiated power dependance with voltage.
+        </td></tr>
+        </table>
+    </p>
+
+<h3>Wire breaking</h3>
+<p>
+
+The last step of the laboratory session was to take the IV-curve of the wire for higher voltages, until it breaks.
+Figures 6 and 7 show the dependence between the current, the power and the temperature with the applied voltage.
+
+    </p>
+    <p style="text-align:center">
+        <table align='center'>
+            <tr>
+                <td><img src="wire_burning.png" height="430"></td>
+                <td><img src="wire_burning_power.png" height="430"></td>
+            </tr>
+		<tr><td align=center>
+            Figure 6: IV curve and temperature dependance with voltage for high current.
+        </td><td align=center>
+            Figure 7: Power and temperature dependance with voltage for high current.
+        </td></tr>
+
+        </table>
+    </p>
+
+    </p>
+
+<p>
+
+According to this experimental data, the wire broke at 2.2W and 647°C. The melting point of aluminum is 660°C, which is very close to the result obtained.
+
+<p>
+
+<h3>Simulation of the wire</h3>
+<p>The calculated heat flow out of the wire by radiation and convection is about a factor 50 too low (see fig.5). To further investigate this difference, a simulation was written in python of a wire heated up by a current and dissipating heat by radiation, convection and heat transfer by phonons and electrons into the contacts, which were considered to be an infinite heat source.
+For this, the wire is divided into $n$ wire pieces. The current $I$ is the same through every piece:
+
+\[ \begin{equation}
+I = \frac{U_{tot}}{R_{tot}}
+\end{equation} \]
+
+The voltage drop $U_i$ over wirepiece $i$ is
+\[ \begin{equation}
+U_i = U_{tot} \frac{R_i}{R_{tot}},
+\end{equation} \]
+
+with $R_i$ being resistance of piece $i$ at temperature $T_i$
+\[ \begin{equation}
+R_i = \frac{R_0 + R_1 (T_i-273)}{n}.
+\end{equation} \]
+For the resistance of the whole wire at temperature $T_i$, the experimental data $R_0$, $R_1$ described above was used.
+<br>
+So in every timestep $\Delta t$, every piece $i$ receives the electrical energy
+\[ \begin{equation}
+E_{i,in} = \Delta t \, \frac{U_{tot}^2 R_i}{R_{tot}^2}.
+\end{equation} \]
+
+According to Stefan-Boltzmann-law, the radiated energy per timestep and wirepiece is
+\[ \begin{equation}
+E_{i,rad} = \Delta t \, (T_i^4 - 293^4) * \sigma * \frac{A}{n} * \varepsilon_{wire}
+\end{equation} \]
+with the Stefan-Boltzmann-constant $\sigma$, the surface area of the whole wire $A$, and the emissivity of the wire $\varepsilon_{wire}$.
+The term $T_i^4 - 293^4$ describes that every piece radiates energy according to its temperature, but also receives radiation from its surroundings, which are assumed to be at room temperature.
+
+The emissivity of the aluminum wire largely depends on the thickness of its oxide layer, which is not known. So the emissivity was set to 0.9, which corresponds to anodized aluminum with a very thick oxide layer, as an upper boundary value.
+<br>
+The convected heat per timestep is given by
+\[ \begin{equation}
+E_{i,conv} = \Delta t \, (T_i-293) \alpha \frac{A}{n},
+\end{equation} \]
+assuming that the surrounding air is always at room temperature. The heat transfer coefficient for non-flowing air is $\alpha = 10 \, W m^{-2} K^{-1}$, according to literature (Wärmelehre: Technische Physik Band 3 von Horst Herr).
+
+The heat transfer rate through a homogeneous solid is
+\[ \begin{equation}
+\frac{d}{dt} Q = \lambda \, (T_1 - T_2) \, \frac{area}{length}
+\end{equation} \]
+with the thermoconductivity $\lambda$, which generally is a function of temperature. For aluminum, <a href="https://www.schweizer-fn.de/stoff/wleit_metall/wleit_metall.php">these literature values</a> were used to create a linear fit, resulting in the desired $\lambda_{Al}(T)$ function.
+<br>
+The energy flow per timestep from one wirepiece to the next was then approximated with
+\[ \begin{equation}
+E_{i \rightarrow i-1} = \Delta t \, \lambda(\frac{T_i+T_{i-1}}{2}) \, (T_i-T_{i-1}) \, r_{wire}^2\pi \, \frac{n}{l_{wire}}.
+\end{equation} \]
+The energy flowing into the outer pieces, which are fixed at T=293K because they are in direct contact with the copper clamps, is the outgoing heat current.
+<br>
+Then the temperature of each wirepiece is updated according to the total energyflow in and out of it and its heat capacity, and the next timestep is started.
+<br><br>
+For 1.5V, a stable state is reached after about 0.3 s, where the total incoming and outgoing energies match and the wire temperature does not change anymore.
+Figure 8 shows the time evolution of incoming and outgoing power, and also the temperature distribution of the wire in the stable state. Interestingly, it reaches the melting point of aluminium (660 °C) already at 1.5V, and takes in much less power than the real wire (see fig.4). The reason for this may be in part due to the real wire not being a perfect cylinder, and having a higher surface area.
+
+    <p style="text-align:center">
+        <table align='center'>
+            <tr>
+                <td><img src="wire_simulation_fig1.png" height="400"></td>
+                <td><img src="wire_simulation_fig2.png" height="400"></td>
+            </tr>
+            <tr><td align=center colspan=2>
+            Figure 8: Simulation of a wire with 1.5V applied. Left is the time evolution of in- and outflowing energies, right the temperature distribution of the wire in the steady state.
+            </td></tr>
+        </table>
+    </p>
+
+<p>For 1.5V, the outflowing power in the steady state is
+    <p style="text-align:center">
+        <table align='center'>
+            <tr>
+                <td>$P_{radiated}$</td><td>=</td><td>0.097 W</td>
+            </tr>
+            <tr>
+                <td>$P_{convection}$</td><td>=</td><td>0.011 W</td>
+            </tr>
+            <tr>
+                <td>$P_{phonons,electrons}$</td><td>=</td><td>0.044 W</td>
+            </tr>
+            <tr>
+                <td>$P_{total}$</td><td>=</td><td>0.15 W</td>
+            </tr>
+        </table>
+    </p>
+
+
+</p>
+
+
+
+
+
+<h3>Conclusions</h3>
+<p>
+The dissipated power of the wire in fig.5 does not match the inflowing electrical power. However, this figure only shows heat transfer by convection and radiation. To get an idea of how large the heat transfer by phonons and electrons into the copper clamps is, a simulation was written. The simulation is not meant to be exact, e.g. the emissivity of the wire is not known, but it provides a qualitative picture: Most of the power flowing out is clearly due to radiation.
+<br>
+However, it also shows that the temperture distribution of the wire cannot be assumed uniform. For the shown case (1.5V applied, fig.8) it is only about uniform in ~1/3 of its length (of course, it will be more uniform at higher voltages).
+<br>
+Also it was probably not uniform in the climate chamber, because the I-V-curve was taken after the desired temperature in the climate chamber was reached and remained constant for 60 sec. This is too short for the copper blocks to reach thermal equilibrium, so the ends of the wire were at a different temperature than the middle.
+<br><br>
+Another factor is contact resistance: When the wire broke by accident, we put another piece of wire in, and then the wire resistance had changed, which indicates a non-neglectable contact resistance.
+<br><br>
+So to get better results, we recommend
+<br>
+   <ul>
+      <li><p>clean the contacts and maybe also the wire, with sandpaper and/or alcohol.</p></li>
+      <li><p>Take the I-V-curve of the wire in the climatechamber when the temperature was stable for a longer period (estimate it by a heat flow calculation and the copper block heat capacity).</p></li>
+      <li><p>Use a simulation like the one described above (or take an analytical solution for this problem) to take the temperature distribution of the wire into account when calculating the wire temperature and subsequently the power loss at different voltages.</p></li>
+    </ul>
+<!--
+1. Clean the contacts and maybe also the wire, with sandpaper and/or alcohol.</span>
+2. Take the I-V-curve of the wire in the climatechamber when the temperature was stable for a longer period (estimate it by a heat flow calculation and the copper block heat capacity).
+3. Use a simulation like the one described above (or take an analytical solution for this problem) to take the temperature distribution of the wire into account when calculating the wire temperature and subsequently the power loss at different voltages.
+-->
+</p>
+
+<p style="text-align:center">
+Python code of the wire simultaion<br>
+<textarea rows="25" cols="120">
+import numpy as np
+import matplotlib.pyplot as plt
+
+cross_sectional_area = (0.025*1e-3/2)**2*np.pi  # cross-section, length, surface area of aluminum wire
+length = 0.02  # m
+surface_area = length * 0.025*1e-3*np.pi  # m^2
+k_B = 1.380649e-23  # Boltzmann constant in J / K
+hqu = 6.62607015e-34/(2*np.pi)  # Planck's constant in Js
+c = 299792458  # Speed of light in vacuum, m/s
+sigma = np.pi**2 * k_B**4 / (60 * hqu**3 * c**2)  # Stefan Boltzmann constant
+alpha = 10  # Wärmeübergangskoeffizient für Luft, Watt/(m^2 K), aus: "Wärmelehre: Technische Physik Band 3" von Horst Herr
+emissivity_Al_wire = 0.9  # emissivity of this wire depends on oxide thickness, which is not known. 0.9 is an upper boundary value for emissivity (anodized aluminum)
+def lambda_(temp_):
+    # Thermoconductivity aluminium, W/(m K), linear fit from literature values https://www.schweizer-fn.de/stoff/wleit_metall/wleit_metall.php
+    return 221.15254237288127-(temp_-273)*0.07322033898305053
+
+def R_exp(temp_):
+    # Resistance of the whole wire as a function of temperature, linear fit from the experimental data
+    R_0 = 1.6340022589714156  # Ohm
+    R_1 = 0.019160762400174974  # Ohm / deg celsius
+    return R_0 + R_1*(temp_-273)
+
+wirepieces = 100  # In how many parts the wire is divided for the simulation. Higher values -> more accurate, but also require a lower timestep
+T = np.ones(wirepieces,dtype=float)*293  # in the beginning, all pieces have 20 deg celsius
+# Heat capacity of a wire piece
+c_Al = 896  # J / (kg K)
+V_wirepiece = (0.025*1e-3/2)**2*np.pi * length/wirepieces
+m_wirepiece = V_wirepiece * 2800  # density of Al = 2800 kg/m^3
+c_wirepiece = c_Al * m_wirepiece  # J/K
+
+timestep = 1e-4  # in seconds
+time_end = 0.4
+U = 1.5  # Volt
+
+t_data = []
+P_out_data = []
+P_data = []
+for time in range(int(time_end/timestep)):
+    # energy input
+    # I = U_tot/R_tot   I is the same in every wirepiece
+    # U_i = U_tot * R_i/R_tot    U_i...voltage drop over wirepiece i
+    # P_i = U_i * I = U_tot^2 * R_i / R_tot^2
+    # R_i = R_exp(T_i) / wirepieces
+
+    R = R_exp(T)/wirepieces
+    E = timestep * U**2 * R / np.sum(R)**2
+    P_data.append(np.sum(E)/timestep)
+    T += E/c_wirepiece
+
+    T[0] = 293  # set ends of wire to 293K (direct contact to copper clamps, they are a infinite heat source at T=293K)
+    T[-1] = 293
+    E_out_rad = timestep * T**4 * sigma * surface_area/wirepieces * emissivity_Al_wire
+    E_out_rad -= timestep * 293**4 * sigma * surface_area/wirepieces * emissivity_Al_wire  # every wirepiece also receives radiation from the environment
+    E_out_convection = timestep * (T-293) * alpha * surface_area/wirepieces  # air is considered to be always 293 K
+    E_out_phonons_electrons = np.zeros(wirepieces-1, dtype=float)
+    # heat transfer in wire and into copper clamps:
+    for i,temp in enumerate(T):
+        if i > 0:  # for every element but the first, calculate heat transfer to the left side
+            E_out_phonons_electrons[i-1] += timestep * lambda_((T[i]+T[i-1])/2) * (T[i]-T[i-1]) * cross_sectional_area / (length/wirepieces)
+    T -= E_out_rad/c_wirepiece
+    T -= E_out_convection/c_wirepiece
+    for i in np.arange(1,wirepieces-1):
+        T[i] -= E_out_phonons_electrons[i-1]/c_wirepiece  # flows out to the left side
+        T[i] += E_out_phonons_electrons[i]/c_wirepiece    # flows in from the right side
+
+    E_loss_total = abs(E_out_phonons_electrons[0]) + abs(E_out_phonons_electrons[-1]) + np.sum(E_out_rad) + np.sum(E_out_convection)
+    t_data.append(time*timestep)
+    P_out_data.append(E_loss_total/timestep)
+    if time%1000 == 0:
+        print(format(time*timestep,".5f"),'s  P_out =',format(E_loss_total/timestep,".6f"),'P =',np.sum(E)/timestep)
+
+print('Phonons, Electrons:', (abs(E_out_phonons_electrons[0]) + abs(E_out_phonons_electrons[-1]))/timestep, 'W')
+print('Convection:', np.sum(E_out_convection)/timestep, 'W')
+print('Radiation:', np.sum(E_out_rad)/timestep, 'W')
+print('Total Power loss:', E_loss_total/timestep, 'W')
+fig1 = plt.figure()
+plt.plot(t_data[int(0.02/timestep):-1],P_out_data[int(0.02/timestep):-1])
+plt.plot(t_data[int(0.02/timestep):-1],P_data[int(0.02/timestep):-1])  # remove first 0.02 sec from plot
+plt.title('Total power output and electrical power input of the wire')
+plt.xlabel('Time / sec')
+plt.ylabel('Power / W')
+plt.legend(['Power out', 'Electrical power in'])
+
+fig2 = plt.figure()
+x=np.arange(0,wirepieces)
+plt.plot(x*length*100/wirepieces,T-273)
+plt.xlabel('Length / cm')
+plt.ylabel('Temperature / °C')
+plt.title('Temperature distribution of wire')
+plt.show()
+</textarea>
+
+
+
+
+
+</body>
+</html>
